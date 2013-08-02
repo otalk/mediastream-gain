@@ -26,15 +26,7 @@ function GainController(stream) {
 // setting
 GainController.prototype.setGain = function (val) {
     // check for support
-    if (!this.support) {
-        // if we're being asked to set to
-        // 0 we can still disable it.
-        if (val === 0) {
-            return this.off();
-        } else {
-            return;
-        }
-    }
+    if (!this.support) return;
     this.gainFilter.gain.value = val;
     this.gain = val;
 };
@@ -44,21 +36,11 @@ GainController.prototype.getGain = function () {
 };
 
 GainController.prototype.off = function () {
-    if (this.support) return this.setGain(0);
-    this._enableAudio(false);
-    this.gain = 0;
+    return this.setGain(0);
 };
 
 GainController.prototype.on = function () {
-    if (this.support) return this.setGain(1);
-    this._enableAudio(true);
-    this.gain = 1;
-};
-
-GainController.prototype._enableAudio = function (bool) {
-    this.stream.getAudioTracks().forEach(function (track) {
-        track.enabled = bool;
-    });
+    this.setGain(1);
 };
 
 
@@ -84,7 +66,7 @@ module.exports = {
     support: !!PC,
     dataChannel: !!(PC && PC.prototype && PC.prototype.createDataChannel),
     prefix: prefix,
-    webAudio: !!AudioContext.prototype.createMediaStreamSource,
+    webAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
     screenSharing: screenSharing,
     AudioContext: AudioContext,
     PeerConnection: PC,
