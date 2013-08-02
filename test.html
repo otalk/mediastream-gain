@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>getUserMedia</title>
+        <title>mediastream-gain</title>
     </head>
     <body>
-        <video id="local"></video>
+        <video id="local" width="200"></video>
+        <br>
+        <button onclick="gainController.setGain(1)">gainController.setGain(1)</button>
+        <button onclick="gainController.setGain(0)">gainController.setGain(0)</button>
+        <button onclick="gainController.setGain(.5)">gainController.setGain(.5)</button>
+        <button onclick="gainController.off()">gainController.off()</button>
+        <button onclick="gainController.on()">gainController.on()</button>
         <script src="node_modules/getusermedia/getusermedia.bundle.js"></script>
         <script src="node_modules/attachmediastream/attachmediastream.bundle.js"></script>
         <script src="mediastream-gain.bundle.js"></script>
