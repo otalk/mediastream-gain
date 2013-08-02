@@ -1,8 +1,8 @@
 {
-  "name": "mic-gain-control",
+  "name": "mediastream-gain",
   "version": "0.0.1",
   "description": "cross-browser getUserMedia shim with node.js style error-first API.",
-  "main": "mic-gain-control.js",
+  "main": "mediastream-gain.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/HenrikJoreteg/mediastream-gain"
@@ -20,6 +20,8 @@
     "webrtcsupport": "0.4.0"
   },
   "devDependencies": {
-    "browserify": "2.x"
+    "browserify": "2.x",
+    "getusermedia": "0.2.1",
+    "attachmediastream": "1.0.1"
   }
 }
