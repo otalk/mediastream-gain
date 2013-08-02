@@ -1,0 +1,25 @@
+{
+  "name": "mic-gain-control",
+  "version": "0.0.1",
+  "description": "cross-browser getUserMedia shim with node.js style error-first API.",
+  "main": "mic-gain-control.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HenrikJoreteg/mediastream-gain"
+  },
+  "keywords": [
+    "browser",
+    "getUserMedia",
+    "WebRTC",
+    "microphone",
+    "webaudio"
+  ],
+  "author": "Henrik Joreteg <henrik@andyet.net>",
+  "license": "MIT",
+  "dependencies": {
+    "webrtcsupport": "0.4.0"
+  },
+  "devDependencies": {
+    "browserify": "2.x"
+  }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>getUserMedia</title>
+    </head>
+    <body>
+        <video id="local"></video>
+        <script src="getusermedia.bundle.js"></script>
+        <script src="attachmediastream.bundle.js"></script>
+        <script src="mediastream-gain.bundle.js"></script>
+        <script>
+            getUserMedia(function (err, stream) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    attachMediaStream(stream, document.getElementById('local'));
+                    window.gainController = new MediaStreamGainController(stream);
+                }
+            });
+        </script>
+    </body>
+</html>
