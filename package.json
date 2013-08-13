@@ -1,6 +1,6 @@
 {
   "name": "mediastream-gain",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "cross-browser getUserMedia shim with node.js style error-first API.",
   "main": "mediastream-gain.js",
   "repository": {
