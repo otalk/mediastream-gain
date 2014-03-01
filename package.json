@@ -1,11 +1,16 @@
 {
   "name": "mediastream-gain",
-  "version": "0.1.1",
   "description": "cross-browser getUserMedia shim with node.js style error-first API.",
-  "main": "mediastream-gain.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HenrikJoreteg/mediastream-gain"
+  "version": "0.1.1",
+  "author": "Henrik Joreteg <henrik@andyet.net>",
+  "dependencies": {
+    "webrtcsupport": "0.7.x"
+  },
+  "devDependencies": {
+    "attachmediastream": "1.0.1",
+    "browserify": "2.x",
+    "getusermedia": "0.2.1",
+    "precommit-hook": "0.3.x"
   },
   "keywords": [
     "browser",
@@ -14,14 +19,10 @@
     "microphone",
     "webaudio"
   ],
-  "author": "Henrik Joreteg <henrik@andyet.net>",
   "license": "MIT",
-  "dependencies": {
-    "webrtcsupport": "0.7.1"
-  },
-  "devDependencies": {
-    "browserify": "2.x",
-    "getusermedia": "0.2.1",
-    "attachmediastream": "1.0.1"
+  "main": "mediastream-gain.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HenrikJoreteg/mediastream-gain"
   }
 }
