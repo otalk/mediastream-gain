@@ -15,8 +15,8 @@ function GainController(stream) {
         this.outputStream = this.destination.stream;
         this.microphone.connect(this.gainFilter);
         this.gainFilter.connect(this.destination);
-        stream.removeTrack(stream.getAudioTracks()[0]);
         stream.addTrack(this.outputStream.getAudioTracks()[0]);
+        stream.removeTrack(stream.getAudioTracks()[0]);
     }
     this.stream = stream;
 }

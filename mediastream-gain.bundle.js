@@ -16,8 +16,8 @@ function GainController(stream) {
         this.outputStream = this.destination.stream;
         this.microphone.connect(this.gainFilter);
         this.gainFilter.connect(this.destination);
-        stream.removeTrack(stream.getAudioTracks()[0]);
         stream.addTrack(this.outputStream.getAudioTracks()[0]);
+        stream.removeTrack(stream.getAudioTracks()[0]);
     }
     this.stream = stream;
 }
@@ -65,7 +65,7 @@ var PC = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
 var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
 var MediaStream = window.webkitMediaStream || window.MediaStream;
-var screenSharing = window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26;
+var screenSharing = window.location.protocol === 'https:' && window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26;
 var AudioContext = window.webkitAudioContext || window.AudioContext;
 
 
