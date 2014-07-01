@@ -1,7 +1,7 @@
 {
   "name": "mediastream-gain",
   "description": "cross-browser getUserMedia shim with node.js style error-first API.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Henrik Joreteg <henrik@andyet.net>",
   "dependencies": {
     "webrtcsupport": "0.7.x"
