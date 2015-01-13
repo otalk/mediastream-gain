@@ -13,9 +13,7 @@ If you're not using browserify or you want AMD support use `mediastream-volume.b
 
 ## Important details
 
-1. **NOTE:** as of this writing FireFox (while it has good WebAudio support in upcoming versions doesn't have support for using media from getUserMedia as an audio source even in its most cutting edge releases. Specifically there's no `AudioContext.prototype.createMediaStreamSource`. So this can't be use to mute an audio stream, for example.
-
-2. The way this works by replacing the first audio channel in the stream with one that is run through a gain filter. But beware that this *edits the stream you give it in place* it doesn't produce a new one.
+The way this works by replacing the first audio channel in the stream with one that is run through a gain filter. But beware that this *edits the stream you give it in place* it doesn't produce a new one.
 
 
 ## Installing
@@ -42,7 +40,7 @@ getUserMedia(function (err, stream) {
     // set gain to 20%
     gainControl.setGain(.2);
     // set gain to 0, effectively muting it
-    gainControl.getGain(0); 
+    gainControl.setGain(0); 
     // there's also:
     gainControl.off(); // equivalent to setGain(0)
     gainControl.on(); // equivalent to setGain(1)
@@ -52,7 +50,7 @@ getUserMedia(function (err, stream) {
 
 ## Methods
 
-It couldn't be simpler, but behavior varies slighly based on availability of WebAudio support that can be wired into WebRTC. Firefox, has WebAudio but user media can't yet be used as a source, rendering it useless for WebRTC applications.
+It couldn't be simpler, but behavior varies slighly based on availability of WebAudio support that can be wired into WebRTC.
 
 You can check for support by checking the `support` property of the an instance of `gainController`
 
